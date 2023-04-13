@@ -1,0 +1,19 @@
+Fonts: 
+    https://fonts.google.com/specimen/Exo
+    https://fonts.google.com/specimen/Spectral+SC?query=spect
+
+Colors:
+    Gold Gradient:
+        background-image: linear-gradient(
+            to right,
+            #744747 0,
+            #cb9b51 22%, 
+            #f6e27a 45%,
+            #e2dc88 50%,
+            #f6e27a 55%,
+            #cb9b51 78%,
+            #744747 100%
+        );
+        color:transparent;
+        -webkit-background-clip:text;
+    BG: #0f0f0f

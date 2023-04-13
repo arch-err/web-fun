@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spectre</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="mainWrapper">
+
+        <div id="header">
+            <img src="images/0.png">
+            <h1 class="gold">Spectre x360</h1>
+            <h2 class="silver">En väldigt bra laptop</h2>
+        </div>
+
+        <div id="specs">
+            <div id="info">
+                <h1 class="gold">Tekniska Specifikationer</h1>
+                <ul>
+                    <li>Intel i5-8265U</li>
+                    <li>8 GB Ram</li>
+                    <li>512 GB </li>
+                    <li>13" Touchskärm (1080p)</li>
+                </ul>
+            </div>
+
+            <div id="imageSlider">
+                <div id="imgFrame">
+                    <img id="image"" src="" alt="">
+
+                </div>
+                <button id="previous" onclick="previous()">❮</button>
+                <button id="next" onclick="next()">❯</button>
+            </div>
+        </div>
+
+        <div id="io">
+
+            <div id="imageWrapper">
+                <img src="images/10.png" alt="">
+            </div>
+
+            <div id="info">
+                <h1 class="gold">Funktioner</h1>
+                <ul>
+                    <li>Sensor För Fingeravtryck</li>
+                    <li>IR-Sensorer För Ansiktsigenkänning</li>
+                    <li>2x Thunderbolt 3 Port</li>
+                    <li>1x USB-A 3.0 Port</li>
+                    <li>1x Micro-SD Läsare</li>
+                    <li>1x 3.5 mm Ljudkontakt</li>
+                    
+                </ul>
+            </div>
+        </div>
+
+        <div id="buyNow">
+            <img src="images/12.png" alt="">
+            <a class="gold" target="_blank" href="https://www.hp.com/se-sv/laptops/premium-high-performance-laptops.html">
+                Köp Här
+            </a>
+        </div>
+
+
+    </div>
+
+    <footer>
+
+        <a href="about/"><h4>Om Sidan</h4></a>
+        <a href="contact/"><h4>Kontakt</h4></a>
+
+        <p class="gold"> ❮ © 2022 Jesper Berglund ❯ </p>
+
+    </footer>
+
+    <script>
+        let i = 1
+        document.getElementById("image").src = "images/" + i + ".png"
+        console.log("images/" + i + ".png");
+
+        function next() {
+            i++
+            if (i > 4) {
+                i = 1
+            }
+            document.getElementById("image").src = "images/" + i + ".png"
+        }
+
+        function previous() {
+            i--
+            if (i < 1) {
+                i = 4
+            }
+            document.getElementById("image").src = "images/" + i + ".png"
+        }
+
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,100 @@
+:root {
+    --rotateSpeed: 10s;
+
+    --sideLen: 2em;
+    --leftRight: calc(var(--sideLen)/2);
+    --height: calc(var(--sideLen)*0.8660254);
+
+    --rightCol: #00CC0060;
+    --leftCol: #ffe60060;
+    --frontCol: #0026ff60;
+    --bottomCol: #ff000060;
+
+}
+
+body {
+    /* background-color: black; */
+    font-size: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 95vh;
+    overflow: hidden;
+
+    perspective: 10em;
+    perspective-origin: 50% calc(50% - 2em);
+}
+
+#scene {
+    position: relative;
+    transform-style: preserve-3d;
+
+    animation: sceneRotate var(--rotateSpeed) infinite linear;
+}
+
+@keyframes sceneRotate {
+    to  {
+        transform: rotateY(360deg);
+    }
+}
+
+#tet {
+    width: var(--sideLen);
+    height: var(--height);
+    position: absolute;
+    top: -1em;
+    left: -1em;
+    font-size: 25vw ;
+    transform-style: preserve-3d;
+}
+
+#tet > div > div {
+    transform-style: preserve-3d;
+    position: absolute;
+}
+
+#tet > div {
+    transform-style: preserve-3d;
+    transform: translateZ(calc(var(--leftRight)*0.577)) ;
+}
+
+#front, #bottom, #left, #right {
+    width: 0;
+    height: 0;
+    
+    border-left: var(--leftRight) solid transparent;
+    border-right: var(--leftRight) solid transparent;
+
+    transform-origin: bottom;
+}
+
+#left {
+    transform: rotateX(-19.47deg);
+    border-bottom: var(--height) solid var(--leftCol);
+}
+
+#right {
+    transform: rotateX(-19.47deg);
+    border-bottom: var(--height) solid var(--rightCol);
+}
+
+#front {
+    transform: rotateX(19.47deg);
+    border-bottom: var(--height) solid var(--frontCol);
+
+}
+
+#leftWrapper { 
+    transform-origin: left;
+    transform: rotateY(60deg);
+}
+
+#rightWrapper { 
+    transform-origin: right;
+    transform: rotateY(-60deg); 
+}
+
+#bottom {
+    transform: rotateX(90deg);
+    border-bottom: var(--height) solid var(--bottomCol);
+}
