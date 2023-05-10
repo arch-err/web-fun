@@ -13,7 +13,7 @@
 }
 
 body {
-    /* background-color: black; */
+    background-color: black;
     font-size: 75px;
     display: flex;
     justify-content: center;
